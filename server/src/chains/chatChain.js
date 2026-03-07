@@ -18,11 +18,11 @@ export async function getChatResponse(sessionId, userMessage) {
         apiKey: process.env.GROQ_API_KEY,
     });
 
-    // পুরনো conversation history লোড করুন
+
     const memoryResult = await memory.loadMemoryVariables({});
     const history = memoryResult.history || [];
 
-    // সব messages একসাথে পাঠান
+
     const messages = [
         new SystemMessage(systemPrompt),
         ...history,
@@ -32,7 +32,7 @@ export async function getChatResponse(sessionId, userMessage) {
     const response = await model.invoke(messages);
     const reply = response.content;
 
-    // Memory তে save করুন
+
     await memory.saveContext(
         { input: userMessage },
         { output: reply }
