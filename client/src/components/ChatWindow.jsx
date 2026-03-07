@@ -18,7 +18,7 @@ export default function ChatWindow() {
                 <div className="header-left">
                     <div className="logo-dot" />
                     <div>
-                        <h1>SoftbrainAi</h1>
+                        <h1>SoftbrainAi Chat</h1>
                         <span className="status">● Online</span>
                     </div>
                 </div>
