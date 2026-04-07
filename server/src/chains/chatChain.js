@@ -11,8 +11,15 @@ Keep responses concise but complete.`;
 export async function getChatResponse(sessionId, userMessage) {
     const memory = getMemory(sessionId);
 
+    // const model = new ChatGroq({
+    //     modelName: process.env.MODEL_NAME || "llama-3.3-70b-versatile",
+    //     temperature: parseFloat(process.env.TEMPERATURE || "0.7"),
+    //     maxTokens: parseInt(process.env.MAX_TOKENS || "1000"),
+    //     apiKey: process.env.GROQ_API_KEY,
+    // });
+
     const model = new ChatGroq({
-        modelName: process.env.MODEL_NAME || "llama-3.3-70b-versatile",
+        modelName: process.env.MODEL_NAME || "llama3-70b-8192",
         temperature: parseFloat(process.env.TEMPERATURE || "0.7"),
         maxTokens: parseInt(process.env.MAX_TOKENS || "1000"),
         apiKey: process.env.GROQ_API_KEY,
